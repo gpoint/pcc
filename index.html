@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Public Complaints Commission Portal</title>
+
+        <!-- Theme CSS -->
+        <!--<link href=".vendor/css/material-kit.min.css" rel="stylesheet">-->
+
+        <!-- Bootstrap Core CSS -->
+        <link href=".vendor\bootstrap\css\bootstrap.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href=".vendor\font-awesome\css\font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!--        <link href='https:\\fonts.googleapis.com\css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text\css'>
+                <link href='https:\\fonts.googleapis.com\css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text\css'>-->
+
+        <!-- Plugin CSS -->
+        <link href=".vendor\magnific-popup\magnific-popup.css" rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link href=".vendor\css\creative.css" rel="stylesheet">
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:\\ -->
+        <!--[if lt IE 9]>
+            <script src="https:\\oss.maxcdn.com\libs\html5shiv\3.7.0\html5shiv.js"></script>
+            <script src="https:\\oss.maxcdn.com\libs\respond.js\1.4.2\respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body id="page-top">
+
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a href="#complain" 
+                       class="navbar-toggle collapsed" 
+                       data-toggle="collapse" 
+                       data-target="#bs-example-navbar-collapse-1 page-scroll" 
+                       style="border-radius: 0;">
+                        <span class="sr-only"></span>
+                        <span class="sr-only"></span>
+                        <span class="sr-only"></span> 
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
+                    <!--<a class="navbar-brand page-scroll hidden-xs hidden-sm hidden-md" href="#">-->
+                    <img class="img-circle pull-left hidden-md hidden-sm hidden-xs"
+                         src=".vendor\img\logo.png" alt="PCC"
+                         style="width: 90px;height: 90px; position: fixed" />
+                    <img class="img-circle pull-left hidden-lg" 
+                         src=".vendor\img\logo.png" alt="PCC"
+                         style="width: 50px;height: 50px; position: fixed" />
+                    <!--                    </a>
+                                        <a class="navbar-brand page-scroll hidden-lg" href="#">
+                                        <img class="img-circle" src=".vendor\img\logo.png" alt="PCC" style="width: 50px;height: 50px" />
+                                        </a>-->
+                    <a class="navbar-brand page-scroll hidden-xs hidden-sm hidden-md pull-right"
+                       style="position: fixed;margin-top: 10px;margin-left: 90px" 
+                       href="http://localhost/pcc">
+                        Public Complaints Commission Portal
+                    </a>
+                    <a id="href" class="navbar-brand page-scroll hidden-lg"
+                       style="position: fixed;margin-top: 5px;margin-left: 50px" 
+                       href="http://localhost/pcc">
+                        PCC Portal
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#complainModal">Lodge Complaint</a>
+                        </li>
+                        <!--                        <li>
+                                                    <a class="page-scroll" href="#services">Services</a>
+                                                </li>
+                                                <li>
+                                                    <a class="page-scroll" href="#contact">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a class="page-scroll" href="#login" data-toggle="modal" data-target="#loginModal">Login</a>
+                                                </li>-->
+                    </ul>
+                </div>
+                <!-- \.navbar-collapse -->
+            </div>
+            <!-- \.container-fluid -->
+        </nav>
+
+        <header style="background-color: green">
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h2 id="homeHeading">Welcome To The Public Complaints Commission Portal</h2>
+                    <hr>
+                    <form id="statusForm" method="POST">
+                        <fieldset>
+                            <legend style="color: #fff;">
+                                Track Your Complaints
+                            </legend>
+                            <label class="form-group">
+                                <input required name="comlplaintID" class="form-control" placeholder="Enter Complaint ID...">
+                            </label>
+                            <label class="form-group">
+                                <b class="hidden-md hidden-xs">Check For Updates On Your Complaint</b>
+                                <input required name="complainantEmailUpdate" class="form-control" placeholder="Enter Email Address...">
+                            </label>
+                            <label class="form-group">
+                                <input required name="complainantPhoneUpdate" class="form-control" placeholder="Enter Phone Number...">
+                            </label>
+                            <!--<button class="btn btn-success">Track</button>-->
+                        </fieldset>
+                    </form>
+
+                    <fieldset>
+                        <legend></legend>
+                        <button class="btn btn-primary btn-xl" onclick="$('#statusForm').submit()">check complaint status</button>
+                    </fieldset>
+                </div>
+            </div>
+        </header>
+        <section class="container text-center">
+            <div class=" col-xs-12 col-sm-12">
+                <i class="fa fa-4x fa-bullhorn text-primary sr-icons"></i>
+                <h2 class="section-heading">
+                    Have a Complaint?
+                </h2>
+                <!--                <hr class="bg-primary"/>
+                                <h4>
+                                    <b>
+                                        The Primary Aim of the Public Complaints Commission is to make sure your voice is heard.
+                                    </b>
+                                </h4>-->
+                <hr class="bg-primary"/>
+                <a href="#" class="btn btn-primary btn-xl" data-toggle="modal" data-target="#complainModal">
+                    Lodge Complaint
+                </a>
+            </div>
+        </section>
+        <div id="complain"
+             class="bg-primary"
+             style="height: 100px">
+        </div>
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item">
+                                <a href="#">Contact</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item">
+                                <a href="#">Terms of Use</a>
+                            </li>
+                            <li class="list-inline-item">&sdot;</li>
+                            <li class="list-inline-item">
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Public Complaints Commission 2018. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item mr-3">
+                                <a href="#">
+                                    <i class="fa fa-facebook fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a href="#">
+                                    <i class="fa fa-twitter fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-instagram fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="complainModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title hidden-md hidden-lg" id="complainModalLabel">
+                            Please Fill In The Complaint Form.
+                        </h4>
+                        <h4 class="modal-title hidden-xs hidden-sm" id="complainModalLabel">
+                            Please Fill In The Complaint Form Properly And Check That The Data Is Correct.
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--http://localhost/PCC/service/example/Rest_Proxy.php-->
+                        <form id="complainForm" class="row" action="the action is creating new complaint">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <input required name="name" class="form-control"
+                                           placeholder="Subject Of The Complaint..."
+                                           />
+                                </div>
+                                <div class="form-group">
+                                    <input required name='complainant_interest_c' class="form-control"
+                                           placeholder="Complainant Interest..."/>
+                                </div>
+                                <div class="form-group">
+                                    <input required name='complainant_interest_c' class="form-control" placeholder="Request \ Prayer..."/>
+                                </div>
+                                <div class="form-group">
+                                    <input required name="in_date_c" class="form-control" placeholder="Date Of Incedence..."/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <select name="issue_cat_c" class="form-control">
+                                        <option disabled selected>Issue Category...</option>
+                                        <option label="Pension" value="issue1">Pension</option>
+                                        <option label="Educational Institute" value="issue2">Educational Institute</option>
+                                        <option label="Financial Institute" value="issue3">Financial Institute</option>
+                                        <option label="Communities" value="issue4">Communities</option>
+                                        <option label="Private Companies" value="issue5">Private Companies</option>
+                                        <option label="MDAs" value="issue6">MDAs</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="incident_state_c" class="form-control">
+                                        <option disabled selected>State Of Incedent</option>
+                                        <option label="Abia" value="Abia">Abia</option>
+                                        <option label="Adamawa" value="Adamawa">Adamawa</option>
+                                        <option label="Akwa Ibom" value="Akwa_Ibom">Akwa Ibom</option>
+                                        <option label="Anambra" value="Anambra">Anambra</option>
+                                        <option label="Bauchi" value="Bauchi">Bauchi</option>
+                                        <option label="Bayelsa" value="Bayelsa">Bayelsa</option>
+                                        <option label="Benue" value="Benue">Benue</option>
+                                        <option label="Borno" value="Borno">Borno</option>
+                                        <option label="Cross River" value="Cross_River">Cross River</option>
+                                        <option label="Delta" value="Delta">Delta</option>
+                                        <option label="Ebonyi" value="Ebonyi">Ebonyi</option>
+                                        <option label="Ebonyi" value="Enugu">Ebonyi</option>
+                                        <option label="Edo" value="Edo">Edo</option>
+                                        <option label="Ekiti" value="Ekiti">Ekiti</option>
+                                        <option label="Gombe" value="Gombe">Gombe</option>
+                                        <option label="Imo" value="Imo">Imo</option>
+                                        <option label="Jigawa" value="Jigawa">Jigawa</option>
+                                        <option label="Kaduna" value="Kaduna">Kaduna</option>
+                                        <option label="Kano" value="Kano">Kano</option>
+                                        <option label="Katsina" value="Katsina">Katsina</option>
+                                        <option label="Kebbi" value="Kebbi">Kebbi</option>
+                                        <option label="Kogi" value="Kogi">Kogi</option>
+                                        <option label="Kwara" value="Kwara">Kwara</option>
+                                        <option label="Lagos" value="Lagos">Lagos</option>
+                                        <option label="Nasarawa" value="Nasarawa">Nasarawa</option>
+                                        <option label="Niger" value="Niger">Niger</option>
+                                        <option label="Ogun" value="Ogun">Ogun</option>
+                                        <option label="Ondo" value="Ondo">Ondo</option>
+                                        <option label="Osun" value="Osun">Osun</option>
+                                        <option label="Oyo" value="Oyo">Oyo</option>
+                                        <option label="Plateau" value="Plateau">Plateau</option>
+                                        <option label="Rivers" value="Rivers">Rivers</option>
+                                        <option label="Sokoto" value="Sokoto">Sokoto</option>
+                                        <option label="Taraba" value="Taraba">Taraba</option>
+                                        <option label="Yobe" value="Yobe">Yobe</option>
+                                        <option label="Zamfara" value="Zamfara">Zamfara</option>
+                                        <option label="FCT" value="FCT">FCT</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input required name='area_incidence_c' class="form-control" placeholder="Area Of Incedent..."/>
+                                </div>
+                                <div class="form-group">
+                                    <input required name='incidence_address_c' class="form-control" placeholder="Incedent Address..."/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                    <div class="form-control"
+                                         style="height: auto !important;">
+                                        <input required name="law_case_c" class="pull-right" type="checkbox" value="yes">
+                                        Is complaint pending before the court of law?
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-control"
+                                         style="height: auto !important;">
+                                        <input required name="complaint_range_c" class="pull-right" type="checkbox" value="yes">
+                                        Is complaint more than 12 months old?
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-control"
+                                         style="height: auto !important;">
+                                        <input required name="complaint_occurance_c" class="pull-right" type="checkbox" value="yes">
+                                        Did complaint occur before 29<sup>th</sup> July, 1975?
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-control"
+                                         style="height: auto !important;">
+                                        <input required name="complaint_lodge_c" class="pull-right" type="checkbox" value="yes">
+                                        Is complaint lodged on behalf of someone else?
+                                    </div>
+                                </div>
+                                <!--                                <select class="form-control">
+                                                                    <option >Complaint Type</option>
+                                                                </select>
+                                                                <input required type="file" id="relFile" class="hidden"/>
+                                                                <button id="fileBtn" class="btn-success form-control" onclick="$('#relFile').click()">
+                                                                    Upload Relevant File...
+                                                                </button>-->
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="form-group col-md-8 col-md-offset-2">
+                                    <div class="form-control"
+                                         style="height: auto !important;">
+                                        <input required name="legal_add_c" class="pull-right" type="checkbox" value="yes">
+                                        Have all legal or administrative procedures been exhausted?
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            <div class="col-sm-6 col-md-12">-->
+                            <div class="col-sm-12 col-md-6">
+                                <label>
+                                    Describe the complaint
+                                </label>
+                                <textarea name='complaint_description_c'
+                                          class="form-control"
+                                          placeholder="Complaint description..."
+                                          style="max-width: 100%;min-width: 100%;
+                                          max-height:100px;min-height:100px;"
+                                          ></textarea>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label>
+                                    Steps taken to resolve complaint
+                                </label>
+                                <textarea name='resolution_steps_c'
+                                          class="form-control"
+                                          placeholder="Complaint resolution description..."
+                                          style="max-width: 100%;min-width: 100%;
+                                          max-height:100px;min-height:100px;"
+                                          ></textarea>
+                            </div>
+                            <input required id="formReset" type="reset" onclick="$('#loginReset').click()" class="hidden">
+                            <input required id="complainSubmit" type="submit" class="hidden">
+                            <!--</div>-->
+                        </form>
+                        <!--                        <form action="/registration" method="POST">
+                                                    <p>
+                                                        User name (4 characters minimum, only alphanumeric characters):
+                                                        <input required data-validation="length alphanumeric" data-validation-length="min4">
+                                                    </p>
+                                                    <div class="input-append date form_datetime">
+                                                        <input required size="16" type="text" value="" readonly>
+                                                        <span class="add-on"><i class="icon-th"></i></span>
+                                                    </div>
+                                                    <p>
+                                                        Year (yyyy-mm-dd):
+                                                        <input required data-validation="date" data-validation-format="yyyy-mm-dd">
+                                                    </p>
+                                                    <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                                        <input required class="span2" size="16" type="text" value="12-02-2012">
+                                                        <span class="add-on"><i class="icon-th"></i></span>
+                                                    </div>            
+                                                    <p>
+                                                        Website:
+                                                        <input required data-validation="url">
+                                                    </p>
+                                                    <p>
+                                                        <input required type="submit">
+                                                    </p>
+                                                </form>-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="complainCancel" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
+                        <!--onclick="$('#complainSubmit').click()"-->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sureModal" >Submit</button>
+                    </div>
+                </div>
+                <!-- \.modal-content -->
+            </div>
+            <!-- \.modal-dialog -->
+        </div>
+        <!-- \.modal -->
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" id="complainantClose" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-center" id="loginModalLabel">
+                            Please Fill In Your Contact Details So That You Can Be Promptly Contacted Or Notified Regarding Your Complaint
+                        </h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form class="row" method="POST">
+                            <div class="form-group col-sm-12 col-md-2">
+                                <input required class="form-control" name="complainantTitle"
+                                       placeholder="Title"/>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-5">
+                                <input required class="form-control" name="complainantFirstName"
+                                       placeholder="Firstname"/>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-5">
+                                <input required class="form-control" name="complainantLastName"
+                                       placeholder="Lastname"/>
+                            </div>
+                            <div class="form-group col-sm-6 col-md-7">
+                                <input required class="form-control" name="complainantEmail"
+                                       placeholder="Email..."/>
+                            </div>
+                            <div class="form-group col-sm-6 col-md-4 input-group">
+                                <span class="input-group-addon input-group-prepend">+234</span>
+                                <input required class="form-control" name="complainantPhone"
+                                       placeholder="Phone..."/>
+                            </div>
+                            <input required id="loginReset" type="reset" class="hidden">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger pull-left" id="loginCancel" data-dismiss="modal" onclick="$('#complainCancel').click()">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="$('#complainForm').submit()">Finish</button>
+                    </div>
+                </div>
+                <!-- \.modal-content -->
+            </div>
+            <!-- \.modal-dialog -->
+        </div>
+        <!-- \.modal -->
+
+        <div class="modal fade" id="sureModal" tabindex="-1" role="dialog" aria-labelledby="sureModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-center" id="sureModalLabel">
+                            Have You Complained Before ?
+                        </h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" 
+                                class="btn btn-danger pull-left" 
+                                data-dismiss="modal" 
+                                data-toggle="modal" 
+                                data-target="#loginModal" 
+                                onclick="collectName(true)">
+                            NO
+                        </button>
+                        <button type="button" 
+                                class="btn btn-primary" 
+                                data-dismiss="modal" 
+                                data-toggle="modal" 
+                                data-target="#loginModal" 
+                                onclick="collectName(false)">
+                            YES
+                        </button>
+                    </div>
+                </div>
+                <!-- \.modal-content -->
+            </div>
+            <!-- \.modal-dialog -->
+        </div>
+        <!-- \.modal -->
+
+
+        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-center" id="alertModalLabel">
+                            Thank You
+                        </h4>
+                    </div>
+                    <div class="modal-body text-center" id="alertText">
+                        <!--//-->
+                    </div>
+                    <div class="modal-footer">
+                        <input required type="hidden"
+                               class="hidden"
+                                data-toggle="modal" 
+                                data-target="#loginModal" 
+                               id="alertModalBtn"/>
+                        <button type="button" 
+                                class="btn btn-primary" 
+                                data-dismiss="modal">
+                            OK
+                        </button>
+                    </div>
+                </div>
+                <!-- \.modal-content -->
+            </div>
+            <!-- \.modal-dialog -->
+        </div>
+        <!-- \.modal -->
+
+
+
+
+
+
+        <!-- jQuery -->
+        <script src=".vendor\jquery\jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src=".vendor\bootstrap\js\bootstrap.min.js"></script>
+        <!--        <script src=".vendor/bootstrap/js/popper.min.js"></script>
+                
+                <script src=".vendor/js/moment.min.js"></script>
+                
+                <script src=".vendor/bootstrap/js/bootstrap-datetimepicker.js"></script>-->
+        <script src=".vendor/js/bootstrap-datetimepicker.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src=".vendor\jquery\jquery.easing.min.js"></script>
+        <script src=".vendor\scrollreveal\scrollreveal.min.js"></script>
+        <script src=".vendor\magnific-popup\jquery.magnific-popup.min.js"></script>
+
+        <script src=".vendor\js\jquery.validate.min.js"></script>
+        <script src=".vendor\js\creative.min.js"></script>
+
+        <!--<script src=".vendor/bootstrap/js/material-kit.min.js"></script>-->
+        <!-- Theme JavaScript -->
+        <script src="0.js"></script>
+
+    </body>
+
+</html>
