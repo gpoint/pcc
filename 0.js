@@ -123,11 +123,11 @@ function submitComplaint() {
                     new_status_c: 'New',
                     incident_state_c: $("[name='incident_state_c']").val(),
                     area_incidence_c: $("[name='incidence_address_c']").val(),
-                    law_case_c: $("[name='law_case_c']").val(),
-                    complaint_range_c: $("[name='complaint_range_c']").val(),
-                    complaint_occurance_c: $("[name='complaint_occurance_c']").val(),
-                    complaint_lodge_c: $("[name='complaint_lodge_c']").val(),
-                    legal_add_c: $("[name='legal_add_c']").val(),
+                    law_case_c: $("[name='law_case_c']").prop('checked')?'yes':'no',
+                    complaint_range_c: $("[name='complaint_range_c']").prop('checked')?'yes':'no',
+                    complaint_occurance_c: $("[name='complaint_occurance_c']").prop('checked')?'yes':'no',
+                    complaint_lodge_c: $("[name='complaint_lodge_c']").prop('checked')?'yes':'no',
+                    legal_add_c: $("[name='legal_add_c']").prop('checked')?'yes':'no',
                     complaint_description_c: $("[name='complaint_description_c']").val(),
                     resolution_steps_c: $("[name='resolution_steps_c']").val(),
                     module: 'Cases'
@@ -164,11 +164,11 @@ function getStatus(complaintID) {
                         alert('Please check the complaint ID');
                     }
                     alert("Complaint:\t\t" + data.name
-                            + "\nComplaint Date:\t\t" + data.id
+                            + "\nComplaint ID:\t\t" + data.case_number
+                            + "\nComplaint Date:\t\t" + data.date_entered
                             + "\nComplaint State:\t\t" + data.incident_state_c
-                            + "\nComplaint ID:\t\t" + data.region_c
                             + "\nComplaint Stage:\t\t" + data.new_status_c
-                            + "\nComplaint Is:\t\t" + data.state);
+                            + "\nComplaint Is " + data.state);
 //                    $('#alertText').html(data);
 //                    $('#alertModalBtn').click();
                 }

@@ -118,10 +118,14 @@ class Data {
     }
 
     public static function getComplaintID($complaint_hash) {
-        $query = "SELECT `case_number`  FROM `cases` WHERE id='$complaint_id'";
-        $m = new mysqli(Data::host, Data::user, Data::password, Data::database);
+        $query = "SELECT `case_number` FROM `cases` WHERE `id`='$complaint_hash'";
+        
+//        print_r($query);
+        
+        $m = new mysqli(Data::$host, Data::$user, Data::$password, Data::$database);
 //        mysqli_real_connect($link, $host, $username, $passwd, $dbname, $port)
         $result = mysqli_query($m, $query);
+        
         $result_array = mysqli_fetch_assoc($result);
         return ($result_array['case_number']);
     }
@@ -129,7 +133,7 @@ class Data {
     public static function getComplaintStatus($case_number, $contact_id) {
 //        $array = array();
 //----------------------------------------------------------------------------------------------------//
-        $id_query = "SELECT `id`,`name`,`date_entered`,`state` FROM `cases` WHERE `case_number`='$case_number' LIMIT 1";
+        $id_query = "SELECT `id`,`name`,`date_entered`,`case_number`,`state` FROM `cases` WHERE `case_number`='$case_number' LIMIT 1";
         $m = new mysqli(Data::$host, Data::$user, Data::$password, Data::$database);
 //        mysqli_real_connect($link, $host, $username, $passwd, $dbname, $port)
         $id_result = mysqli_query($m, $id_query);
@@ -166,7 +170,7 @@ class Data {
 //----------------------------------------------------------------------------------------------------//
     }
 
-    function complainantExists($list, $param, $param_value) {
+    static function complainantExists($list, $param, $param_value) {
 
 //        echo "$param   $param_value";
 //        print_r(json_encode($list));
